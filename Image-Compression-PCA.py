@@ -1,10 +1,9 @@
-# IMPORT NECESSARY LIBRARIES
-
 import scipy
 import scipy.ndimage
 import matplotlib.pyplot as plt 
 import numpy as np 
 from PIL import Image
+import cv2
 
 # IMPORTING IMAGE USING SCIPY AND TAKING R,G,B COMPONENTS
 
@@ -32,8 +31,8 @@ def comp_2d(image_2d): # FUNCTION FOR RECONSTRUCTING 2D MATRIX USING PCA
 
 a_r_recon, a_g_recon, a_b_recon = comp_2d(a_r), comp_2d(a_g), comp_2d(a_b) # RECONSTRUCTING R,G,B COMPONENTS SEPARATELY
 recon_color_img = np.dstack((a_r_recon, a_g_recon, a_b_recon)) # COMBINING R.G,B COMPONENTS TO PRODUCE COLOR IMAGE
-recon_color_img = Image.fromarray(recon_color_img)
-recon_color_img.show()
+plt.imshow(recon_color_img)
+plt.show()
 
 
 
